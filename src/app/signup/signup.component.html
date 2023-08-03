@@ -1,0 +1,22 @@
+<form (ngSubmit)="signup()" #signupForm="ngForm">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" [(ngModel)]="userData.username" required>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" [(ngModel)]="userData.email" required>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" [(ngModel)]="userData.password" required>
+  </div>
+
+  <button type="submit" [disabled]="signupForm.invalid">Signup</button>
+
+
+  <!--<button type="submit">Sign Up</button> -->
+</form>
+<p *ngIf="message">{{ message }}</p>
